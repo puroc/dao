@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="cxf wsdl2java" default="mybatis-generator" basedir=".">
+
+	<path id="mybatis-generator-classpath">
+		<fileset dir="../lib">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<target name="mybatis-generator">
+		<java classname="org.mybatis.generator.api.ShellRunner" fork="true">
+			<arg value="-configfile" />
+			<arg value="../ant/mybatis-generator-config.xml" />
+			<arg value="-overwrite" />
+			<classpath>
+				<path refid="mybatis-generator-classpath" />
+			</classpath>
+		</java>
+	</target>
+</project>
